@@ -1,7 +1,7 @@
 # IDS_706-Data_Engineering_Systems
 ## Mini-Project 8 : Rewriting a Python Script in Rust
 
-#### PURPOSE
+### PURPOSE
 
 This project is for a data engineering course (Mini-Project 8). The purpose of this project is to rewrite an existing Python script used for data processing in the Rust programming language. The main goals of this project are as follows:
 1. Code Migration: Rewrite the Python script in Rust, ensuring it performs the same data processing tasks.  
@@ -9,7 +9,7 @@ This project is for a data engineering course (Mini-Project 8). The purpose of t
 
 ***
 
-#### PROCESS
+### PROCESS
 
 To achieve the objectives of this project, the following steps are taken:
 1. Script Selection: Selected an existing Python script for data processing. This script served as a suitable candidate for migration to Rust. 
