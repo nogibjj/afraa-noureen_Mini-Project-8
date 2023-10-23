@@ -18,8 +18,6 @@ To achieve the objectives of this project, the following steps are taken:
 4. Benchmarking: Conducted performance benchmarking tests to evaluate the improvements in execution speed and resource usage achieved by the Rust version of the script.
 5. Documentation: Documented the entire process, including the code migration and performance benchmarking. Created a performance comparison report in Markdown format (README).
 
-Dataset: [Baskin Robbins Ice-Cream](https://raw.githubusercontent.com/prasertcbs/basic-dataset/master/baskin_icecream.csv)
-
 ***
 
 ### Commands to Run the Repo
