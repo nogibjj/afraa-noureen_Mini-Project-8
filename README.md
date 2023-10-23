@@ -1,13 +1,14 @@
 # IDS_706-Data_Engineering_Systems
-## Mini-Project 5 : Python Script interacting with SQL Database
-
+## Mini-Project 8 : Rewriting a Python Script in Rust
 
 
 ***
 
 #### Purpose
 
-This project is for a data engineering course (Mini-Project 5). It involves the use of a Python script to interact with an SQL database. The project also implements continuous integration through GitHub Actions to automate the setup of the environment, perform testing, code formatting, and code linting.
+This project is for a data engineering course (Mini-Project 8). The purpose of this project is to rewrite an existing Python script used for data processing in the Rust programming language. The main goals of this project are as follows:
+1. Code Migration: Rewrite the Python script in Rust, ensuring it performs the same data processing tasks.  
+2. Performance Enhancement: Evaluate the improvements in terms of execution speed and resource usage after the migration to Rust.
 
 ***
 
