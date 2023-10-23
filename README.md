@@ -9,18 +9,14 @@ This project is for a data engineering course (Mini-Project 8). The purpose of t
 
 ***
 
-#### ETL-Query Operations
-
-Extract (E): Retrieves a dataset in CSV format from a specified URL.  
-Transform (T): Cleans, filters, and enriches the extracted data, preparing it for analysis.  
-Load (L): Loads the transformed data into a SQLite Database table using Python's sqlite3 module.  
-Query (Q): Writes and executes SQL queries on the SQLite database to analyze and extract insights from the data.
-
-****
-
 #### Process
 
-The template given by Professor Noah was used in this project. It was modified by replacing the original dataset (food market) with a dataset related to ice-cream flavours sold by Baskin Robbins. This dataset was extracted into a local CSV file. It was cleaned and transformed, and then loaded into a .db file. SQL queries were then executed to analyze the data. This repo also includes functions for data extraction, transformation and data loading. It also includes a function which implements an SQL log to record all actions performed during queries.
+To achieve the objectives of this project, the following steps are taken:
+1. Script Selection: Selected an existing Python script for data processing. This script served as a suitable candidate for migration to Rust. 
+2. Rewrite in Rust: Rewrote the selected Python script in Rust while maintaining the same functionality. This step involved translating the Python code into idiomatic Rust code.
+3. Testing and Debugging: Tested the Rust script to ensure it produces the expected results. Debugged and fixed any issues that arose during the migration.
+4. Benchmarking: Conducted performance benchmarking tests to evaluate the improvements in execution speed and resource usage achieved by the Rust version of the script.
+5. Documentation: Documented the entire process, including the code migration and performance benchmarking. Created a performance comparison report in Markdown format (README).
 
 Dataset: [Baskin Robbins Ice-Cream](https://raw.githubusercontent.com/prasertcbs/basic-dataset/master/baskin_icecream.csv)
 
@@ -57,12 +53,4 @@ To run the project, you can use the Makefile and follow these commands:
    # To query data
    make query
    ```
-***
-
-#### Successful Formatting, Linting and Testing
-
-On running make format, make lint, and make test in actions, it executes succesfully.
-
-![make lint format](https://github.com/nogibjj/afraa-n_Mini-Project-5/assets/143756865/3d2317bf-4aa3-43a5-9b2b-6944022fd48a)
-![make test](https://github.com/nogibjj/afraa-n_Mini-Project-5/assets/143756865/7c2b932a-a38d-45d4-8bf6-acd0e312df61)
 
