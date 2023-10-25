@@ -1,49 +1,65 @@
+rust-version:
+	@echo "Rust command-line utility versions:"
+	rustc --version 			#rust compiler
+	cargo --version 			#rust package manager
+	rustfmt --version			#rust code formatter
+	rustup --version			#rust toolchain manager
+	clippy-driver --version		#rust linter
+
+format:
+	cargo fmt --quiet
+
 install:
+	# Install if needed
+	#@echo "Updating rust toolchain"
+	#rustup update stable
+	#rustup default stable 
+
+lint:
+	cargo clippy --quiet
+
+test:
+	cargo test --quiet
+
+run:
+	cargo run
+
+release:
+	cargo build --release
+
+all: format lint test run
+
+python_install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
-test:
+python_test:
 	python -m pytest -vv --cov=main --cov=mylib test_*.py
 
-format:	
+python_format:	
 	black *.py 
 
-lint:
-	#disable comment to test speed
-	#pylint --disable=R,C --ignore-patterns=test_.*?py *.py mylib/*.py
-	#ruff linting is 10-100X faster than pylint
+python_lint:
 	ruff check *.py mylib/*.py
 
-container-lint:
+python_container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
 
-refactor: format lint
+python_refactor: format lint
 
-deploy:
+python_deploy:
 	#deploy goes here
 		
-all: install lint test format deploy
+python_all: install lint test format deploy
 
 generate_and_push:
-	# Create the markdown file 
-	python test_main.py  # Replace with the actual command to generate the markdown
-
 	# Add, commit, and push the generated files to GitHub
 	@if [ -n "$$(git status --porcelain)" ]; then \
 		git config --local user.email "action@github.com"; \
 		git config --local user.name "GitHub Action"; \
 		git add .; \
-		git commit -m "Add SQL log"; \
+		git commit -m "Add metric log"; \
 		git push; \
 	else \
 		echo "No changes to commit. Skipping commit and push."; \
 	fi
-
-extract:
-	python main.py extract
-
-transform_load: 
-	python main.py transform_load
-
-query:
-	python main.py run_query "SELECT * FROM baskin_icecream WHERE Flavour='Green Tea';"
